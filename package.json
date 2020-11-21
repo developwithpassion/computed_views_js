@@ -1,0 +1,56 @@
+{
+  "author": "Develop With Passion",
+  "name": "@developwithpassion/computed_views",
+  "main": "./dist/index.js",
+  "description": "Computed views utilities",
+  "version": "0.0.3",
+  "repository": {
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "@developwithpassion/funcy_js": "git+https://github.com/developwithpassion/funcy_js.git",
+    "@developwithpassion/matchers_js": "git+https://github.com/developwithpassion/matchers_js.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/register": "^7.7.0",
+    "babel-jest": "^25.1.0",
+    "babel-strip-test-code": "^1.1.12",
+    "chai": "^4.2.0",
+    "documentation": "^12.1.4",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "eslint-plugin-mocha": "^6.2.1",
+    "husky": "^3.0.9",
+    "jest": "^25.1.0",
+    "lint-staged": "^9.4.3",
+    "mocha": "^6.2.2",
+    "parcel": "^1.12.4",
+    "prettier": "^1.19.1",
+    "reselect": "^4.0.0"
+  },
+  "scripts": {
+    "bump-patch": "yarn version patch",
+    "build": "parcel build ./lib/index.js",
+    "docs-build": "documentation build lib/index.js -f md -o docs.md",
+    "docs-buildh": "documentation build lib/index.js -f html -o docs --watch",
+    "pretty": "prettier --config-precedence prefer-file --write \"lib/**/*.js\"",
+    "lint": "eslint lib/**/*.js",
+    "test": "jest",
+    "test-watch": "jest --watchAll"
+  },
+  "lint-staged": {
+    "lib/**/*.js": [
+      "yarn run pretty",
+      "yarn run lint",
+      "yarn run build",
+      "git add"
+    ]
+  }
+}
