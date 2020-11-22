@@ -12,6 +12,7 @@
     "node": "*"
   },
   "dependencies": {
+    "@developwithpassion/curry_js": "git+https://github.com/developwithpassion/curry_js.git",
     "@developwithpassion/funcy_js": "git+https://github.com/developwithpassion/funcy_js.git",
     "@developwithpassion/matchers_js": "git+https://github.com/developwithpassion/matchers_js.git"
   },
